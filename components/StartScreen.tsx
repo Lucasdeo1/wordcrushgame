@@ -112,7 +112,7 @@ const StartScreen: React.FC<StartScreenProps> = ({
                {t.start.aboutButton}
              </button>
              
-             {/* Donation Button - Monetization */}
+             {/* Donation Button - Monetization //EDITEI
              <a 
                href="https://ko-fi.com" 
                target="_blank"
@@ -121,7 +121,7 @@ const StartScreen: React.FC<StartScreenProps> = ({
              >
                <Coffee size={16} />
                {t.start.donate}
-             </a>
+             </a>*/}
            </div>
         </div>
 
