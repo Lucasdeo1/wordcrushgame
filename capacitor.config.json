@@ -1,0 +1,20 @@
+{
+  "appId": "com.wordcrushgame.app",
+  "appName": "WordCrush",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#0f172a"
+    }
+  },
+  "android": {
+       "buildOptions": {
+        "keystorePath": null,
+        "keystoreAlias": null
+      }
+  }
+}

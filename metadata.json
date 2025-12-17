@@ -1,0 +1,5 @@
+{
+  "name": "WordCrush",
+  "description": "A global arcade-style dynamic word puzzle game. Find words, dissolve the grid, and climb the leaderboard.",
+  "requestFramePermissions": []
+}
