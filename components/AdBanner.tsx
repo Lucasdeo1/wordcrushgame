@@ -8,7 +8,7 @@ interface AdBannerProps {
 
 const AdBanner: React.FC<AdBannerProps> = ({ 
   className = "", 
-  dataAdSlot = "1234567890", // Substitua pelo seu Slot ID do AdSense real quando criar blocos de anúncio
+  dataAdSlot = "3061821108", // Substitua pelo seu Slot ID do AdSense real quando criar blocos de anúncio
   format = "auto" 
 }) => {
 
@@ -45,7 +45,7 @@ const AdBanner: React.FC<AdBannerProps> = ({
       <ins
         className="adsbygoogle"
         style={{ display: 'block', minWidth: '300px', width: '100%' }}
-        data-ad-client="ca-pub-SEU_ID_DE_CLIENTE_AQUI" // IMPORTANTE: Coloque seu ID aqui (ex: ca-pub-123456...)
+        data-ad-client="ca-pub-8161074207857287" // IMPORTANTE: Coloque seu ID aqui (ex: ca-pub-123456...)
         data-ad-slot={dataAdSlot}
         data-ad-format={format}
         data-full-width-responsive="true"
