@@ -1,57 +1,82 @@
-# 🌍 WordCrush - Guia de Lançamento
+# 🧩 WordCrush Game
 
-Este guia contém os passos exatos para colocar o **wordcrushgame.com** no ar.
+WordCrush é um jogo de palavras desenvolvido como uma **Single Page Application (SPA)**, com foco em performance, experiência do usuário e lógica de jogo. O projeto está em produção e conta com um **ranking global em tempo real**, conectando jogadores de diferentes países.
 
-## 1. Configuração do Banco de Dados (Firebase)
-O jogo precisa do Firebase para salvar o Ranking Mundial.
-
-1. Acesse [console.firebase.google.com](https://console.firebase.google.com/).
-2. Crie um projeto novo chamado **WordCrush**.
-3. No menu lateral, clique em **Criação** > **Firestore Database**.
-4. Clique em **Criar banco de dados**.
-   * Escolha o local (ex: `nam5` ou `sa-east-1` para Brasil).
-   * **IMPORTANTE:** Comece no **Modo de teste** (para não precisar configurar regras de segurança complexas agora).
-5. Clique na engrenagem (⚙️) > **Configurações do projeto**.
-6. Role até "Seus aplicativos" e clique no ícone **Web** (`</>`).
-   * Apelido do app: `WordCrush Web`.
-   * Registre o app.
-7. Copie as configurações (`apiKey`, `authDomain`, etc) que o Firebase mostrar.
-8. Abra o arquivo `services/firebase.ts` no seu código e cole essas chaves lá.
-
-## 2. Configuração de Anúncios (Google AdSense)
-Para ganhar dinheiro com o jogo.
-
-1. Acesse o [Google AdSense](https://adsense.google.com/).
-2. Adicione o site: `wordcrushgame.com`.
-3. O AdSense vai te dar um **ID de Publicador** (ex: `pub-1234567890123456`).
-4. **No código:**
-   * Abra `components/AdBanner.tsx` e troque `ca-pub-SEU_ID...` pelo seu ID.
-   * Abra `public/ads.txt` e troque `pub-SEU_ID...` pelo seu ID.
-5. **No Vercel (Depois do deploy):** O AdSense pedirá para você colocar um script no `<head>`. Como usamos React, verifique se o arquivo `components/AdBanner.tsx` já está fazendo o trabalho, mas certifique-se de que o arquivo `public/ads.txt` está acessível no navegador após o deploy (ex: `wordcrushgame.com/ads.txt`).
-
-## 3. Hospedagem (Vercel)
-
-1. Crie uma conta na [Vercel](https://vercel.com/) (use sua conta GitHub).
-2. Clique em **Add New...** > **Project**.
-3. Importe o repositório do WordCrush.
-4. Framework Preset: **Vite** (ou Create React App, a Vercel detecta automático).
-5. Clique em **Deploy**.
-
-### Configurando o Domínio
-1. No painel do projeto na Vercel, vá em **Settings** > **Domains**.
-2. Adicione `wordcrushgame.com`.
-3. A Vercel vai te dar os `Nameservers` (ex: `ns1.vercel-dns.com` e `ns2.vercel-dns.com`).
-4. Vá onde você comprou o domínio (GoDaddy, Namecheap, Registro.br, etc).
-5. Altere os servidores de DNS do seu domínio para os que a Vercel forneceu.
-6. Aguarde a propagação (pode levar de 1h a 24h).
+🔗 **Acesse o jogo:** [https://wordcrushgame.com](https://wordcrushgame.com)
 
 ---
 
-## ✅ Lista de Verificação Final
+## 🚀 Tecnologias Utilizadas
 
-- [ ] `services/firebase.ts` está com as chaves reais?
-- [ ] O Firestore foi criado no console do Firebase?
-- [ ] `components/AdBanner.tsx` está com o ID do AdSense correto?
-- [ ] O domínio na Vercel está com o status "Valid Configuration"?
+### Front-end
 
-**Boa sorte com o lançamento! 🚀**
+* **React** – arquitetura baseada em componentes e navegação sem recarregamento de página
+* **TypeScript** – tipagem estática para maior segurança e manutenção do código
+* **JavaScript (ES6+)**
+* **HTML5 | CSS3**
+* **Tailwind CSS** – estilização moderna e responsiva
+
+### Back-end / Nuvem
+
+* **Firebase Firestore** – banco de dados NoSQL em nuvem
+* **Firebase Hosting** – deploy do projeto em produção
+
+### Ferramentas
+
+* **Vite** – build rápido e otimizado
+* **Git & GitHub** – versionamento de código
+
+---
+
+## 🧠 Funcionalidades Principais
+
+* 🎮 Jogo de palavras com **níveis gerados dinamicamente**
+* ⚡ Navegação instantânea (SPA, sem reload de página)
+* 🌍 **Ranking global em tempo real**
+* 🧮 Sistema de pontuação por nível
+* 🎨 Interface moderna e responsiva
+* 🎉 Feedback visual ao concluir níveis
+
+---
+
+## ⚙️ Lógica de Jogo
+
+O jogo utiliza um **algoritmo customizado** para geração automática de níveis, localizado no arquivo `levelService.ts`. Esse algoritmo é responsável por:
+
+* Criar palavras dinamicamente
+* Garantir que não haja sobreposição inválida de letras
+* Permitir a criação de níveis infinitos sem necessidade de configuração manual
+
+---
+
+## 🔒 Segurança
+
+Este projeto utiliza **Cloud Firestore com regras de segurança personalizadas**, garantindo:
+
+* ✅ Leitura pública do ranking
+* ✅ Escrita permitida apenas com dados válidos (nome, pontuação, nível, país e data)
+* ❌ Bloqueio de atualização e exclusão de registros
+* ❌ Bloqueio de acesso a outras collections
+
+As chaves de configuração do Firebase estão no front-end **por design da plataforma** e **não concedem acesso administrativo** ao banco de dados. Toda a segurança está centralizada nas **Firestore Rules**.
+
+---
+
+## 📌 Status do Projeto
+
+✅ Em produção
+🔄 Em evolução contínua
+
+---
+
+## 👨‍💻 Autor
+
+**Lucas Deodato Silva**
+Desenvolvedor Web Júnior
+
+* GitHub: [https://github.com/Lucasdeo1](https://github.com/Lucasdeo1)
+* LinkedIn: [https://www.linkedin.com/in/lucas-deodato-467b1b162](https://www.linkedin.com/in/lucas-deodato-467b1b162)
+
+---
+
+⭐ Se você gostou do projeto, fique à vontade para deixar uma estrela no repositório!
