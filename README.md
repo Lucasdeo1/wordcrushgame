@@ -72,7 +72,6 @@ As chaves de configuração do Firebase estão no front-end **por design da plat
 ## 👨‍💻 Autor
 
 **Lucas Deodato Silva**
-Desenvolvedor Web Júnior
 
 * GitHub: [https://github.com/Lucasdeo1](https://github.com/Lucasdeo1)
 * LinkedIn: [https://www.linkedin.com/in/lucas-deodato-467b1b162](https://www.linkedin.com/in/lucas-deodato-467b1b162)
